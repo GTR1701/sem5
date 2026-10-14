@@ -21,6 +21,15 @@ with open(file_path, mode='r', encoding='utf-8') as file:
         
         graph.add_edge(u, v, rating=rating)
 
+reduce_graph = input("Czy chcesz zmniejszyć rozmiar grafu do 1000 węzłów? [t/n]: ").strip().lower()
+if reduce_graph in {"t", "tak", "y", "yes"}:
+    if graph.number_of_nodes() > 1000:
+        selected_nodes = list(graph.nodes)[:1000]
+        graph = graph.subgraph(selected_nodes).copy()
+    print(f"Wczytano graf z {graph.number_of_nodes()} węzłami.")
+else:
+    print(f"Wczytano pełny graf z {graph.number_of_nodes()} węzłami.")
+
 # Zad1
 source, target = random.sample(list(graph.nodes), 2)
 try:

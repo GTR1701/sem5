@@ -2,10 +2,13 @@ import csv
 import networkx as nx
 import os
 import random
+import sys
+
+script_directory = os.path.dirname(os.path.abspath(sys.argv[0]))
 
 graph = nx.Graph()
 
-with open(os.getcwd() + '\sieci-zlozone\lab\\1\soc-sign-bitcoinotc.csv', mode='r', encoding='utf-8') as file:
+with open(script_directory + '\soc-sign-bitcoinotc.csv', mode='r', encoding='utf-8') as file:
     reader = csv.DictReader(file)
     
     for row in reader:
@@ -38,7 +41,7 @@ def get_eulerian_subgraph_edges(graph):
         cycles = nx.cycle_basis(graph)
         if cycles:
             first_cycle = cycles[0]
-            cycle_edges = [(first_cycle[i], first_cycle[(i + 1) % len(first_cycle)]) 
+            cycle_edges = [(first_cycle[i-1], first_cycle[i]) 
                            for i in range(len(first_cycle))]
             return cycle_edges
 eulerian_path = get_eulerian_subgraph_edges(graph)

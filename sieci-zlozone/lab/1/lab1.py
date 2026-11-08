@@ -63,3 +63,5 @@ try:
     print(f"Maksymalny przepływ z węzła {source} do węzła {target} wynosi: {flow_value}")
 except Exception as e:
     print(f"Nie można obliczyć maksymalnego przepływu: {e}")
+
+print(f"Ilość krawędzi w grafie: {nx.number_of_edges(graph)}")

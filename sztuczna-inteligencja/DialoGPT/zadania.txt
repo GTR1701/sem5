@@ -1,0 +1,24 @@
+##### DialoGPT - lokalny LLM #####
+
+Zadania.
+1. Zainstaluj pythona
+(preferowana wersja python-3.11.9, 64-bitowa)
+
+2. (opcjonalne) Stwórz i uruchom wirtualne środowisko
+- w wybranym narzędziu lub z wiersza poleceń
+>> python -m venv venv
+>> venv\Scripts\activate.bat
+
+3. Zainstaluj niezbędne biblioteki
+>> pip install torch transformers accelerate datasets
+
+4. Pobierz DialoGPT-medium
+- strona: https://huggingface.co/microsoft/DialoGPT-medium/tree/main
+(pliki: config.json, generation_config.json, merges.txt, pytorch_model.bin, tokenizer_config.json, vocab.json)
+- zapisz w podkatalogu 'dialogpt'
+
+5. Przeanalizuj i uruchom 4 kolejne skrypty.
+
+6. Wyucz model swoim własnym ciągiem pytań i odpowiedzi.
+
+7. Przeanalizuj wpływ współczynnika uczenia na proces trenowania.

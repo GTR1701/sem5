@@ -1,8 +1,10 @@
 ##### LLM - test
 # W tym pliku testujemy wyuczony model.
+import os
 
-model_path = "trainer\checkpoint-26"
-tokenizer_path = "dialogpt"
+BASE = os.path.dirname(os.path.abspath(__file__))
+tokenizer_path = os.path.join(BASE, "dialogpt")
+model_path = os.path.join(BASE, "trainer\checkpoint-30")
 
 from transformers import AutoModelForCausalLM, AutoTokenizer
 

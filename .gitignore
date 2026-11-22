@@ -5,3 +5,6 @@
 *.zip
 *.bin
 *.png
+*.pth
+*.safetensor
+**/trainer/*
